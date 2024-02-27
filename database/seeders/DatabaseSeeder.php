@@ -47,5 +47,11 @@ class DatabaseSeeder extends Seeder
             'status_user' => '1',
             'usercreate_user' => '1',
         ]);
+
+        DB::table('user_role')->insert([
+            'id_user' => '1',
+            'id_role' => '1',
+            'usercreate_userrole' => '1',
+        ]);
     }
 }

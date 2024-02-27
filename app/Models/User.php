@@ -22,12 +22,16 @@ class User extends Authenticatable
     protected $primaryKey = "id_user";
 
     protected $fillable = [
-        'id_role',
         'username_user',
         'password_user',
+        'name_user',
+        'email_user',
+        'address_user',
+        'phonenumber_user',
+        'status_user',
         // Start - Default for all tables
-        'createuser_user',
-        'updateuser_user',
+        'usercreate_user',
+        'userupdate_user',
         // End - Default for all tables
     ];
 
@@ -38,7 +42,6 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password_user',
-        'remember_token',
     ];
 
     /**
@@ -50,7 +53,5 @@ class User extends Authenticatable
         'password_user' => 'hashed',
     ];
 
-    public function roles() {
-        return $this->belongsToMany(RoleModel::class,'userrole', 'id_user', 'id_role');
-    }
+
 }
