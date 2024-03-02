@@ -15,6 +15,7 @@ return new class extends Migration
         Schema::create('attempt', function (Blueprint $table) {
             $table->increments('id_attempt');
             $table->unsignedInteger('id_user');
+            $table->foreign('id_user')->references('id_user')->on('user');
             $table->integer('total_attempt')->default(0);
             $table->integer('blocked_attempt')->default(0);
             $table->dateTime('lastlogin_attempt');

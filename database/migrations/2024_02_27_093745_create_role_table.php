@@ -15,7 +15,9 @@ return new class extends Migration
         Schema::create('role', function (Blueprint $table) {
             $table->increments('id_role');
             $table->unsignedInteger('id_application');
+            $table->foreign('id_application')->references('id_application')->on('application');
             $table->unsignedInteger('id_company');
+            $table->foreign('id_company')->references('id_company')->on('company');
             $table->string('name_role');
             $table->integer('usercreate_role');
             $table->integer('userupdate_role')->nullable();
