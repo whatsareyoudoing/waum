@@ -21,9 +21,18 @@ class UpdateApplicationRequest extends FormRequest
      */
     public function rules(): array
     {
+        $id_application=$this->route()->id;
         return [
-            'kode_application' => 'required',
-            'nama_application' => 'required'
+            'name_application' => 'required|unique:application,name_application,'.$id_application.',id_application'
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'name_application.required' => 'Nama Application Wajib diisi.',
+            'name_application.unique'   => 'Nama Sudah Digunakan',
+            'name_application.max'      => 'Maksimal 150 karakter',
         ];
     }
 }

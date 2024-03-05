@@ -13,23 +13,21 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
 
-    // insert default data 
-    public function defaultProperty($ipAddress, $input){
+    // insert default data
+    public function defaultProperty($name, $input){
         $default = array();
         $id_user = Auth::user()->id_user;
 
         if($input == "add"){
-            $user    = "m_createuser";
+            $user    = "usercreate_".$name;
         }else if($input == "edit"){
-            $user    = "m_updateuser";
+            $user    = "userupdate_".$name;
         }
 
         $default = [
-            'm_updateact'       => $input,
-            $user               => $id_user,
-            'm_updateip'        => $ipAddress,
+            $user               => $id_user
         ];
-        
+
         return $default;
     }
 
@@ -38,12 +36,12 @@ class Controller extends BaseController
         $sqlcreate_user = DB::table('user')->select('namalengkap_user');
         $sqlcreate_user->where('id_user',$createuser);
         $create=$sqlcreate_user->first();
-        
+
         //get update
         $sqlupdate_user = DB::table('user')->select('namalengkap_user');
         $sqlupdate_user->where('id_user',$updateuser==null?'0':$updateuser);
         $update=$sqlupdate_user->first();
-        
+
         $data_user = array(
             'update'=>$updateuser==null?'0':$update->namalengkap_user,
             'create'=>$create->namalengkap_user);

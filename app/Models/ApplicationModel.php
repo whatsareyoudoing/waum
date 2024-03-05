@@ -11,18 +11,14 @@ class ApplicationModel extends Model
     use HasFactory;
 
     protected $table = "application";
+    public $timestamps = false;
 
     protected $primaryKey = "id_application";
 
     protected $fillable = [
-        "kode_application",
-        "nama_application",
-        // Start - Default for all tables
-        "m_createuser",
-        "m_updateuser",
-        "m_updateip",
-        "m_updateact"
-        // End - Default for all tables
+        "name_application",
+        "usercreate_application",
+        "usercreate_update"
     ];
 
 

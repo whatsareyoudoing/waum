@@ -19,24 +19,20 @@ class SubmitApplicationRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    
+
     public function rules(): array
     {
         return [
-            'kode_application'  => 'required|unique:application|max:10',
-            'nama_application'  => 'required|max:150',
+            'name_application'  => 'required|unique:application|max:150',
         ];
     }
 
     public function messages(): array
     {
         return [
-            'kode_application.required' => 'Kode Application Wajib diisi.',
-            'kode_application.unique'   => 'Kode Sudah Digunakan',
-            'kode_application.max'      => 'Maksimal 10 karakter',
-
-            'nama_application.required' => 'Nama Application Wajib diisi.',
-            'nama_application.max'      => 'Maksimal 150 karakter',
+            'name_application.required' => 'Nama Application Wajib diisi.',
+            'name_application.unique'   => 'Nama Sudah Digunakan',
+            'name_application.max'      => 'Maksimal 150 karakter',
         ];
     }
 }

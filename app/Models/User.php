@@ -23,7 +23,7 @@ class User extends Authenticatable
 
     protected $fillable = [
         'username_user',
-        'password_user',
+        'password',
         'name_user',
         'email_user',
         'address_user',
@@ -42,6 +42,7 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password_user',
+        'remember_token',
     ];
 
     /**
@@ -52,6 +53,5 @@ class User extends Authenticatable
     protected $casts = [
         'password_user' => 'hashed',
     ];
-
 
 }

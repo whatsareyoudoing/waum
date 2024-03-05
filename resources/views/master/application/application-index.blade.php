@@ -38,7 +38,6 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Kode {{ $pagetitle }}</th>
                                         <th>Nama {{ $pagetitle }}</th>
                                         <th>Action</th>
                                     </tr>
@@ -46,8 +45,7 @@
                                 <tbody>
                                     @foreach ($applications as $row => $value)
                                         <tr>
-                                            <td>{{ $value->kode_application }}</td>
-                                            <td>{{ $value->nama_application }}</td>
+                                            <td>{{ $value->name_application }}</td>
                                             <td class="d-flex justify-content-start">
                                                 <a href="{{route('applicationEdit',$value->id_application)}}" class="mx-2 btn btn-sm btn-primary"><i class="fa fa-pencil-alt"></i></a>
                                             </td>
@@ -56,7 +54,6 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Kode {{ $pagetitle }}</th>
                                         <th>Nama {{ $pagetitle }}</th>
                                         <th>Action</th>
                                     </tr>

@@ -30,7 +30,7 @@ class BarbershopSeeder extends Seeder
 
             DB::table('user')->insert([
                 'username_user' => 'ownerbarbershop',
-                'password_user' => Hash::make('ownerbarbershop'),
+                'password' => Hash::make('ownerbarbershop'),
                 'name_user' => 'ownerbarbershop',
                 'email_user' => 'ownerbarbershop@barbershop.co.id',
                 'phonenumber_user' => '08',
@@ -55,7 +55,7 @@ class BarbershopSeeder extends Seeder
 
             DB::table('user')->insert([
                 'username_user' => 'kasirbarbershop',
-                'password_user' => Hash::make('kasirbarbershop'),
+                'password' => Hash::make('kasirbarbershop'),
                 'name_user' => 'kasirbarbershop',
                 'email_user' => 'kasirbarbershop@barbershop.co.id',
                 'phonenumber_user' => '08',
@@ -80,7 +80,7 @@ class BarbershopSeeder extends Seeder
 
             DB::table('user')->insert([
                 'username_user' => 'kasirbarbershop',
-                'password_user' => Hash::make('kasirbarbershop'),
+                'password' => Hash::make('kasirbarbershop'),
                 'name_user' => 'kasirbarbershop',
                 'email_user' => 'kasirbarbershop@barbershop.co.id',
                 'phonenumber_user' => '08',
@@ -105,7 +105,7 @@ class BarbershopSeeder extends Seeder
 
             DB::table('user')->insert([
                 'username_user' => 'pelangganbarbershop',
-                'password_user' => Hash::make('pelangganbarbershop'),
+                'password' => Hash::make('pelangganbarbershop'),
                 'name_user' => 'pelangganbarbershop',
                 'email_user' => 'pelangganbarbershop@barbershop.co.id',
                 'phonenumber_user' => '08',

@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('user')->insert([
             'username_user' => 'adminwau',
-            'password_user' => Hash::make('adminwau'),
+            'password' => Hash::make('adminwau'),
             'name_user' => 'adminwau',
             'email_user' => 'adminwau@admin.co.id',
             'phonenumber_user' => '08',
